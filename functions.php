@@ -11,9 +11,9 @@ define("STAGING_SERVER", "my-staging-site.com");
  * Set the enviornment property. This will determine which version of the
  * assets will be used.
  */
-if (stripos($_SERVER['SERVER_NAME'], PRODUCTION_SERVER) !== -1) {
+if (stripos($_SERVER['SERVER_NAME'], PRODUCTION_SERVER) !== false) {
   Rye::$enviornment = Rye::PRODUCTION;
-} else if (stripos($_SERVER['SERVER_NAME'], STAGING_SERVER) !== -1) {
+} else if (stripos($_SERVER['SERVER_NAME'], STAGING_SERVER) !== false) {
   Rye::$enviornment = Rye::STAGING;
 } else {
   Rye::$enviornment = Rye::DEVELOPMENT;
