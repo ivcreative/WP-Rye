@@ -97,8 +97,8 @@ class Rye
    */
   private static function register_taxonomies()
   {
-    foreach (self::$_config['taxonomies'] as $taxonomy) {
-      register_taxonomy($taxonomy[0], $taxonomy[1], $taxonomy[2]);
+    foreach (self::$_config['taxonomies'] as $slug => $taxonomy) {
+      register_taxonomy($slug, $taxonomy['post_type'], $taxonomy['args']);
     }
   }
 
